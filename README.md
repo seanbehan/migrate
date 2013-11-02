@@ -31,3 +31,12 @@ python migrate.py --dump-schema
 python migrate.py --dump-sql --migration create_users
 python migrate.py --dump-sql --all
 ```
+
+With a directory structure  that goes something like...
+
+```bash
+db/
+  /migrations/
+        20131031135212_create_users.py
+        20131031135219_create_posts.py      
+```
