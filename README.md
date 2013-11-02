@@ -17,6 +17,14 @@ class CreateUsers(migrate.Migration):
   def down():
     self.drop_table('users')
 
+class AddPasswordToUsers(migrate.Migration):
+  def up():
+    self.add_column('users', 'password_hash', 'string')
+    self.add_column('users', 'password_salt', 'string')
+  def down():
+    self.remove_column('users', 'password_hash')
+    self.remove_column('users', 'password_salt')
+
 ```
 
 And just as simple to apply migrations, rollback and work with the data...
