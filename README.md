@@ -9,13 +9,11 @@ It should be as simple as this...
 ```python
 import migrate
 
-class CreateUsers(migrate.Migration)
-
+class CreateUsers(migrate.Migration):
   def up():
     self.create_table('users')
     self.string('full_name')
     self.string('email')
-
   def down():
     self.drop_table('users')
 
